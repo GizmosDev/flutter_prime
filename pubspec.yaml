@@ -12,12 +12,12 @@ version: 0.0.1-alpha.1
 
 environment:
   sdk: ">=2.18.0 <3.0.0"
-  flutter: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  prime: any
+  prime: ^0.0.1-alpha.1
 
 dev_dependencies:
   # Testing
