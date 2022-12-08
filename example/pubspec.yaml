@@ -1,0 +1,40 @@
+---
+name: flutter_prime_example
+description: >-
+  An example project that showcases the `flutter_prime` package.
+
+# Contact Info
+homepage: https://gizmos.dev/
+repository: https://github.com/GizmosDev/flutter_prime
+issue_tracker: https://github.com/GizmosDev/flutter_prime/issues
+
+version: 1.0.0+1
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+  flutter: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  prime: any
+
+dev_dependencies:
+  # Testing
+  flutter_test:
+    sdk: flutter
+
+  flutter_prime:
+    path: ../
+
+  cupertino_icons: ^1.0.2
+
+  # Linting
+  flutter_lints: ^2.0.0
+
+  # Building
+  dependency_validator: ^3.2.2
+
+flutter:
+  uses-material-design: true
