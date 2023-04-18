@@ -16,3 +16,13 @@
     * `isPlatformBrightness`: Instance method that returns a `bool` indicating whether the instance matches the device's current `Brightness` setting or not. Useful for quickly determining if you should toggle the current theme.
   * `ThemeDataPrime`:
     * `cupertinoThemeData`: Build a `CupertinoThemeData` object based on a `ThemeData`.
+
+## 0.0.1-alpha.3
+
+### Additions:
+
+#### Extensions:
+  * `ColorPrime`:
+    * `filter`: Instance method that returns a [ColorFilter] with the specified [BlendMode].
+    * `darken`: Instance method that returns [Color] that is darker by either a specified amount or percentage.
+    * `lighten`: Instance method that returns [Color] that is lighter by either a specified amount or percentage.
