@@ -22,4 +22,65 @@ extension ColorPrime on Color {
       '${red.toRadixString(16).padLeft(2, '0')}'
       '${green.toRadixString(16).padLeft(2, '0')}'
       '${blue.toRadixString(16).padLeft(2, '0')}';
+
+  /// Create a [ColorFilter] with the specified [BlendMode].
+  /// See: https://api.flutter.dev/flutter/dart-ui/BlendMode.html for [BlendMode] options.
+  ColorFilter filter({BlendMode blendMode = BlendMode.srcIn}) => ColorFilter.mode(this, blendMode);
+
+  // Methods to lighten or darken a colour
+
+  /// Method 1: using HSL and an amount between 0 and 1
+  /// Based on the methods here: https://stackoverflow.com/a/58604669/144857
+  Color _darkenByAmount({double amount = .1}) {
+    assert(amount >= 0 && amount <= 1);
+
+    final hsl = HSLColor.fromColor(this);
+    final hslDark = hsl.withLightness((hsl.lightness - amount).clamp(0.0, 1.0));
+
+    return hslDark.toColor();
+  }
+
+  Color _lightenByAmount({double amount = .1}) {
+    assert(amount >= 0 && amount <= 1);
+    final hsl = HSLColor.fromColor(this);
+    final hslLight = hsl.withLightness((hsl.lightness + amount).clamp(0.0, 1.0));
+
+    return hslLight.toColor();
+  }
+
+  /// Method 2: using RGB and a percentage between 1 and 100
+  /// Based on the methods here: https://stackoverflow.com/a/60191441/144857
+  /// Darken a color by {percent} amount (100 = black)
+  Color _darkenByPercent({int percent = 10}) {
+    assert(1 <= percent && percent <= 100);
+    final f = 1 - percent / 100;
+    return Color.fromARGB(alpha, (red * f).round(), (green * f).round(), (blue * f).round());
+  }
+
+  /// Lighten a color by {percent} amount (100 = white)
+  Color _lightenByPercent({int percent = 10}) {
+    assert(1 <= percent && percent <= 100);
+    final p = percent / 100;
+    return Color.fromARGB(alpha, red + ((255 - red) * p).round(), green + ((255 - green) * p).round(), blue + ((255 - blue) * p).round());
+  }
+
+  /// Return a new [Color] darkened by either a specified `amount` or by a specified `percent`.
+  Color darken({double? amount, int? percent}) {
+    assert(amount != null || percent != null);
+
+    if (amount != null) return _darkenByAmount(amount: amount);
+    if (percent != null) return _darkenByPercent(percent: percent);
+
+    return this;
+  }
+
+  /// Return a new [Color] lightened by either a specified `amount` or by a specified `percent`.
+  Color lighten({double? amount, int? percent}) {
+    assert(amount != null || percent != null);
+
+    if (amount != null) return _lightenByAmount(amount: amount);
+    if (percent != null) return _lightenByPercent(percent: percent);
+
+    return this;
+  }
 }
