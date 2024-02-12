@@ -1,5 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-
 library flutter_prime;
 
 export 'src/extensions/brightness.dart';
