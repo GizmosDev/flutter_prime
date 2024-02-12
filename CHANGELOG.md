@@ -26,3 +26,12 @@
     * `filter`: Instance method that returns a [ColorFilter] with the specified [BlendMode].
     * `darken`: Instance method that returns [Color] that is darker by either a specified amount or percentage.
     * `lighten`: Instance method that returns [Color] that is lighter by either a specified amount or percentage.
+
+## 0.0.1-alpha.4
+
+### Notes:
+  * Renamed the `build.sh` script to `prebuild.sh` to be more accurate.
+
+### Additions:
+
+#### Extensions:
