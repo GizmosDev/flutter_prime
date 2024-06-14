@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:flutter_prime/flutter_prime.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:prime/prime.dart';
 
 void main() {
   group('ColorPrime Tests', () {
@@ -42,6 +43,22 @@ void main() {
       expect(testColor.toHex(leadingHashSign: false), '12345678');
       expect(testColor.toHex(includeAlpha: false), '#345678');
       expect(testColor.toHex(leadingHashSign: false, includeAlpha: false), '345678');
+    });
+
+    test('ColorPrime.random() Tests', () {
+      final colorOne = ColorPrime.random();
+      final colorTwo = ColorPrime.random();
+      final colorThree = ColorPrime.random();
+
+      final colorOneHex = colorOne.toHex();
+      final colorTwoHex = colorTwo.toHex();
+      final colorThreeHex = colorThree.toHex();
+
+      final listOfHexes = [colorOneHex, colorTwoHex, colorThreeHex];
+      final uniqueHexes = listOfHexes.uniqueList;
+
+      // We generate 3 random colors, so we should have at least 2 unique colors
+      expect(uniqueHexes.length >= 2, true);
     });
   });
 }

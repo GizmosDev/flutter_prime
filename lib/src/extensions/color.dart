@@ -1,5 +1,7 @@
 library flutter_prime;
 
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +14,11 @@ extension ColorPrime on Color {
   static Color fromHex(String hexString) {
     final hasLeadingHashSign = hexString.substring(0, 1) == '#';
     return Color(int.parse(hexString.substring(hasLeadingHashSign ? 1 : 0).padLeft(8, 'f'), radix: 16));
+  }
+
+  /// Return a random `Color` with an optional `alpha` value.
+  static Color random({double alpha = 1.0}) {
+    return Color.fromRGBO(Random().nextInt(255), Random().nextInt(255), Random().nextInt(255), alpha);
   }
 
   /// The hex representation of `this` [Color]. A hash sign is prefixed if
