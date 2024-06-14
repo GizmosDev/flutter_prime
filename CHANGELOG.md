@@ -35,3 +35,11 @@
 ### Additions:
 
 #### Extensions:
+
+## 0.0.1-alpha.5
+
+### Additions:
+
+#### Extensions:
+  * `ColorPrime`:
+    * `random`: Instance method that returns a randomized [Color].
