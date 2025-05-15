@@ -124,7 +124,7 @@ function makeImports {
 	TEMPFILE=$(mktemp /tmp/${PACKAGE_NAME}_makeImports.XXXXXX)
 
 	echo "// GENERATED CODE - DO NOT MODIFY BY HAND" >> "${TEMPFILE}"
-	echo "library ${PACKAGE_NAME};" >> "${TEMPFILE}"
+	echo "library;" >> "${TEMPFILE}"
 	echo "" >> "${TEMPFILE}"
 
 	cd "${LIB_DIR}"

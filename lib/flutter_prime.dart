@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-library flutter_prime;
+library;
 
 export 'src/extensions/brightness.dart';
 export 'src/extensions/color.dart';

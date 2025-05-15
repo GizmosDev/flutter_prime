@@ -1,4 +1,4 @@
-library flutter_prime;
+library;
 
 import 'dart:math';
 

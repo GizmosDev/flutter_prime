@@ -1,4 +1,4 @@
-library flutter_prime;
+library;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
