@@ -8,17 +8,17 @@ homepage: https://gizmos.dev/
 repository: https://github.com/GizmosDev/flutter_prime
 issue_tracker: https://github.com/GizmosDev/flutter_prime/issues
 
-version: 1.0.0+1
+version: 0.1.0-alpha.6
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
-  flutter: ">=3.0.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: ">=3.27.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  prime: any
+  prime: ^0.1.0-alpha.6
 
 dev_dependencies:
   # Testing
@@ -28,13 +28,13 @@ dev_dependencies:
   flutter_prime:
     path: ../
 
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.8
 
   # Linting
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
   # Building
-  dependency_validator: ^4.1.0
+  dependency_validator: ^5.0.2
 
 flutter:
   uses-material-design: true
