@@ -11,10 +11,10 @@ void main() {
 
     test('ColorPrime.fromHex() Tests', () {
       expect(ColorPrime.fromHex('#ffffff'), Colors.white);
-      expect(ColorPrime.fromHex('#80ffffff'), Colors.white.withOpacity(0.5));
+      expect(ColorPrime.fromHex('#80ffffff'), Colors.white.withValues(alpha: 0.5));
 
       expect(ColorPrime.fromHex('ffffff'), Colors.white);
-      expect(ColorPrime.fromHex('80ffffff'), Colors.white.withOpacity(0.5));
+      expect(ColorPrime.fromHex('80ffffff'), Colors.white.withValues(alpha: 0.5));
 
       expect(ColorPrime.fromHex('#673ab7'), const Color(0xff673ab7));
       expect(ColorPrime.fromHex('673ab7'), const Color(0xff673ab7));

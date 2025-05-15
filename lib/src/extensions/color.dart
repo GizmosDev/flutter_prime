@@ -25,10 +25,10 @@ extension ColorPrime on Color {
   /// [leadingHashSign] is set to `true` (default is `true`).
   /// Set `includeAlpha` to include the opacity of the color.
   String toHex({bool leadingHashSign = true, bool includeAlpha = true}) => '${leadingHashSign ? '#' : ''}'
-      '${includeAlpha ? alpha.toRadixString(16).padLeft(2, '0') : ''}'
-      '${red.toRadixString(16).padLeft(2, '0')}'
-      '${green.toRadixString(16).padLeft(2, '0')}'
-      '${blue.toRadixString(16).padLeft(2, '0')}';
+      '${includeAlpha ? (255 * a).round().toRadixString(16).padLeft(2, '0') : ''}'
+      '${(255 * r).round().toRadixString(16).padLeft(2, '0')}'
+      '${(255 * g).round().toRadixString(16).padLeft(2, '0')}'
+      '${(255 * b).round().toRadixString(16).padLeft(2, '0')}';
 
   /// Create a [ColorFilter] with the specified [BlendMode].
   /// See: https://api.flutter.dev/flutter/dart-ui/BlendMode.html for [BlendMode] options.
@@ -57,18 +57,24 @@ extension ColorPrime on Color {
 
   /// Method 2: using RGB and a percentage between 1 and 100
   /// Based on the methods here: https://stackoverflow.com/a/60191441/144857
-  /// Darken a color by {percent} amount (100 = black)
+  /// Darken a color by {percent}
   Color _darkenByPercent({int percent = 10}) {
     assert(1 <= percent && percent <= 100);
-    final f = 1 - percent / 100;
-    return Color.fromARGB(alpha, (red * f).round(), (green * f).round(), (blue * f).round());
+    final percentFactor = 1 - percent / 100;
+
+    return Color.from(alpha: a, red: (r * percentFactor), green: (g * percentFactor), blue: (b * percentFactor));
   }
 
-  /// Lighten a color by {percent} amount (100 = white)
+  /// Lighten a color by {percent}
   Color _lightenByPercent({int percent = 10}) {
     assert(1 <= percent && percent <= 100);
     final p = percent / 100;
-    return Color.fromARGB(alpha, red + ((255 - red) * p).round(), green + ((255 - green) * p).round(), blue + ((255 - blue) * p).round());
+
+    double adjust(double value) {
+      return (value + ((1 - value) * p));
+    }
+
+    return Color.from(alpha: a, red: adjust(r), green: adjust(g), blue: adjust(b));
   }
 
   /// Return a new [Color] darkened by either a specified `amount` or by a specified `percent`.

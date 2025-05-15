@@ -24,7 +24,7 @@ extension ThemeDataPrime on ThemeData {
         dateTimePickerTextStyle: textTheme.displaySmall,
       ),
       barBackgroundColor: colorScheme.primary,
-      scaffoldBackgroundColor: colorScheme.background,
+      scaffoldBackgroundColor: colorScheme.surface,
     );
   }
 }
