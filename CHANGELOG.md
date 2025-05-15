@@ -43,3 +43,17 @@
 #### Extensions:
   * `ColorPrime`:
     * `random`: Instance method that returns a randomized [Color].
+
+
+## 0.1.0-alpha.6 - 2025/05/15
+
+### Notes:
+  * Updated required SDK version: `>=3.6.0 <4.0.0`
+  * Updated required Flutter version: `>=3.27.0 <4.0.0`
+  * Updated dependencies
+  * Updated various deprecated API's to their current replacements
+  * Updated build scripts (Gradle etc)
+
+### Additions:
+
+#### Extensions:
