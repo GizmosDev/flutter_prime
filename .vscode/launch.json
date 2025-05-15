@@ -9,6 +9,8 @@
             "type": "dart",
             "program": "example/lib/main.dart",
             "args": [
+                "--flavor",
+                "dev",
             ],
         },
     ]
