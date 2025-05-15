@@ -49,7 +49,7 @@
 
 ### Notes:
   * Updated required SDK version: `>=3.6.0 <4.0.0`
-  * Updated required Flutter version: `>=3.27.0 <4.0.0`
+  * Updated required Flutter version: `>=3.27.0`
   * Updated dependencies
   * Updated various deprecated API's to their current replacements
   * Updated build scripts (Gradle etc)
