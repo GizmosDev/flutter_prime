@@ -68,3 +68,14 @@
 ### Additions:
 
 #### Extensions:
+
+
+## 0.3.0 - 2025/10/14
+
+### Notes:
+  * Updated required SDK version: `>=3.8.0 <4.0.0`
+  * Bumped dependencies
+
+### Additions:
+
+#### Extensions:
