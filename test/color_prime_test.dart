@@ -11,10 +11,12 @@ void main() {
 
     test('ColorPrime.fromHex() Tests', () {
       expect(ColorPrime.fromHex('#ffffff'), Colors.white);
-      expect(ColorPrime.fromHex('#80ffffff'), Colors.white.withValues(alpha: 0.5));
+      expect(ColorPrime.fromHex('#80ffffff').toHex(leadingHashSign: false, includeAlpha: true), '80ffffff');
+      expect(ColorPrime.fromHex('#80ffffff'), const Color(0x80ffffff));
 
       expect(ColorPrime.fromHex('ffffff'), Colors.white);
-      expect(ColorPrime.fromHex('80ffffff'), Colors.white.withValues(alpha: 0.5));
+      expect(ColorPrime.fromHex('80ffffff').toHex(leadingHashSign: true, includeAlpha: true), '#80ffffff');
+      expect(ColorPrime.fromHex('80ffffff'), const Color(0x80ffffff));
 
       expect(ColorPrime.fromHex('#673ab7'), const Color(0xff673ab7));
       expect(ColorPrime.fromHex('673ab7'), const Color(0xff673ab7));
@@ -44,6 +46,7 @@ void main() {
       expect(testColor.toHex(leadingHashSign: false), '12345678');
       expect(testColor.toHex(includeAlpha: false), '#345678');
       expect(testColor.toHex(leadingHashSign: false, includeAlpha: false), '345678');
+      expect(Colors.white.withValues(alpha: 0.5).toHex(leadingHashSign: true, includeAlpha: true), '#80ffffff');
     });
 
     test('ColorPrime.random() Tests', () {
