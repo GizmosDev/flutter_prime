@@ -24,7 +24,8 @@ extension ColorPrime on Color {
   /// The hex representation of `this` [Color]. A hash sign is prefixed if
   /// [leadingHashSign] is set to `true` (default is `true`).
   /// Set `includeAlpha` to include the opacity of the color.
-  String toHex({bool leadingHashSign = true, bool includeAlpha = true}) => '${leadingHashSign ? '#' : ''}'
+  String toHex({bool leadingHashSign = true, bool includeAlpha = true}) =>
+      '${leadingHashSign ? '#' : ''}'
       '${includeAlpha ? (255 * a).round().toRadixString(16).padLeft(2, '0') : ''}'
       '${(255 * r).round().toRadixString(16).padLeft(2, '0')}'
       '${(255 * g).round().toRadixString(16).padLeft(2, '0')}'

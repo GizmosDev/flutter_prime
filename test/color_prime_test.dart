@@ -23,7 +23,8 @@ void main() {
         for (int r = 10; r < 15; ++r) {
           for (int g = 20; g < 25; ++g) {
             for (int b = 30; b < 35; ++b) {
-              final hexCode = '${a.toRadixString(16).padLeft(2, '0')}'
+              final hexCode =
+                  '${a.toRadixString(16).padLeft(2, '0')}'
                   '${r.toRadixString(16).padLeft(2, '0')}'
                   '${g.toRadixString(16).padLeft(2, '0')}'
                   '${b.toRadixString(16).padLeft(2, '0')}';

@@ -66,7 +66,9 @@ void main() {
       print('      bodyLarge    - ${applied.bodyLarge?.color}');
       print('      bodySmall    - ${applied.bodySmall?.color}');
 
-      final combined = second.merge(base).apply(
+      final combined = second
+          .merge(base)
+          .apply(
             fontFamily: 'Verdana',
             bodyColor: bodyColor,
             displayColor: displayColor,
